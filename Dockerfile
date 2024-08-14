@@ -28,10 +28,10 @@ COPY --from=build_rsp_api /usr/lib/libsdrplay_api.so /usr/lib/libsdrplay_api.so
 COPY --from=build_rsp_api /usr/bin/sdrplay_apiService /usr/bin/sdrplay_apiService
 
 WORKDIR ${BUILD_DIR}
-COPY sdrpp_debian_amd64.deb .
+COPY sdrpp_debian_bullseye_amd64.deb .
 RUN apt-get -y update \
     && apt-get -y --no-install-recommends install \
-        ./sdrpp_debian_amd64.deb \
+        ./sdrpp_debian_bullseye_amd64.deb \
         tini \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
