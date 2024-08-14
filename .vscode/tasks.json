@@ -12,6 +12,11 @@
                 "buildArgs": {
                     "TARGETPLATFORM": "linux/amd64"
                 }
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]
