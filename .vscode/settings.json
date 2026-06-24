@@ -20,5 +20,27 @@
             "template": "${config:docker.dockerPath} run --rm -it --device /dev/bus/usb ${exposedPorts} ${tag}",
             "match": "sdrppserver_container"
         }
+    ],
+    "containers.commands.run": [
+        {
+            "label": "Default run command",
+            "template": "${config:docker.dockerPath} run --rm ${exposedPorts} ${tag}"
+        },
+        {
+            "label": "Run sdrppserver containers",
+            "template": "${config:docker.dockerPath} run --rm --device /dev/bus/usb ${exposedPorts} ${tag}",
+            "match": "sdrppserver_container"
+        }
+    ],
+    "containers.commands.runInteractive": [
+        {
+            "label": "Default run command",
+            "template": "${config:docker.dockerPath} run --rm -it ${exposedPorts} ${tag}"
+        },
+        {
+            "label": "Run sdrppserver containers",
+            "template": "${config:docker.dockerPath} run --rm -it --device /dev/bus/usb ${exposedPorts} ${tag}",
+            "match": "sdrppserver_container"
+        }
     ]
 }
